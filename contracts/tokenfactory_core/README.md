@@ -1,5 +1,7 @@
 # TokenFactory Core (middleware)
 
+![crates.io](https://img.shields.io/crates/v/juno-tokenfactory-core.svg)
+
 This is a contract to which you give the admin of your token denomination(s) from the TokenFactory module. Once this contract has that, it allows other contracts you/your DAO controls to mint tokens for your business logic needs (via a WasmMsg).
 
 This makes it more flexible since multiple contracts can "mint" tokens on behalf of the contract admin :D
@@ -19,8 +21,10 @@ Add the following to your `Cargo.toml` dependencies for a contract. Then view th
 
 ```toml
 [dependencies]
-tokenfactory-types = { git = "https://github.com/CosmosContracts/tokenfactory-contracts" }
+juno-tokenfactory-types = { git = "https://github.com/CosmosContracts/tokenfactory-contracts" }
 ```
+
+or from crates.io - <https://crates.io/crates/juno-tokenfactory-core>
 
 You can view an example of how to use this in the [example contract](https://github.com/CosmosContracts/tokenfactory-contracts/tree/main/contracts/tf_example/src) or see the [e2e test](https://github.com/CosmosContracts/tokenfactory-contracts/blob/main/e2e/core/test_e2e.sh) for a full example in bash.
 
@@ -41,7 +45,7 @@ junod tx tokenfactory create-denom abcde $FLAGS
 
 
 # upload this contract (skip if you use the mainnet code)
-# junod tx wasm store artifacts/tokenfactory_core.wasm $FLAGS
+# junod tx wasm store artifacts/juno_tokenfactory_core.wasm $FLAGS
 
 # Initialize this contract
 # You may want to set this as a normal admin initially before changing its admin to a DAO
@@ -74,7 +78,7 @@ pub enum ExecuteMsg {
 // contract.rs - execute
 
 // Ensure you added the tokenfactory-types dependency
-use tokenfactory_types::msg::ExecuteMsg::Mint;
+use juno::juno_tokenfactory_types::msg::ExecuteMsg::Mint;
 
 ExecuteMsg::MintTokens {
     core_tf_middleware_contract,

@@ -1,6 +1,8 @@
 [package]
-name = "tokenfactory-types"
-version = "0.0.1"
+name = "juno-tokenfactory-types"
+description = "The execute msg types for Juno's TokenFactory module."
+license = "MIT OR Apache-2.0"
+version = "0.1.0"
 authors = ["Reece Williams <reecepbcups@gmail.com>"]
 edition = "2018"
 
@@ -9,5 +11,6 @@ cosmwasm-schema = "1.1"
 cosmwasm-std = "1.1"
 schemars = "0.8"
 serde = { version = "1.0", default-features = false, features = ["derive"] }
+token-bindings = "0.11.0"
 
 [dev-dependencies]

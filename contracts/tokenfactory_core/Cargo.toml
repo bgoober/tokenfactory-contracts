@@ -1,6 +1,8 @@
 [package]
-name = "tokenfactory_core"
-version = "0.0.1"
+name = "juno-tokenfactory-core"
+version = "0.0.4"
+description = "The tokenfactory core middleware for the Juno blockchain."
+license = "MIT OR Apache-2.0"
 authors = ["Reece <reecepbcups@gmail.com>"]
 edition = "2018"
 
@@ -44,13 +46,13 @@ cosmwasm-schema = "1.1"
 cosmwasm-std = "1.1"
 cosmwasm-storage = "1.1"
 cw-storage-plus = "1.0.0"
-token-bindings = { git = "https://github.com/CosmWasm/token-bindings" }
+token-bindings = "0.11.0"
 cw2 = "1.0.0"
 schemars = "0.8"
 serde = { version = "1.0", default-features = false, features = ["derive"] }
 thiserror = "1.0"
 
-tokenfactory-types = { path = "../../packages/tokenfactory-types" }
+juno-tokenfactory-types = { path = "../../packages/tokenfactory-types", version = "0.1.0"}
 
 [dev-dependencies]
 cw-multi-test = "0.16.1"

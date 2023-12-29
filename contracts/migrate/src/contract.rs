@@ -6,7 +6,7 @@ use cosmwasm_std::{
 };
 use cw2::set_contract_version;
 use cw20::Cw20ReceiveMsg;
-use tokenfactory_types::msg::ExecuteMsg::Mint;
+use juno_tokenfactory_types::msg::ExecuteMsg::Mint;
 
 use crate::error::ContractError;
 use crate::msg::{ExecuteMsg, GetConfig, InstantiateMsg, QueryMsg};
@@ -103,7 +103,7 @@ fn handle_cw20_burn(
     ))
 }
 
-fn handle_native(state: &State, info: &MessageInfo) -> Result<(CosmosMsg, Uint128), ContractError> {    
+fn handle_native(state: &State, info: &MessageInfo) -> Result<(CosmosMsg, Uint128), ContractError> {
     if info.funds.is_empty() {
         return Err(ContractError::NoFundsSent {});
     }
